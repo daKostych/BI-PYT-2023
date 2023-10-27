@@ -134,8 +134,17 @@ class Vertex:
         self.last = False
         self.value = None
 
+    def method1(self):
+        """public method 1"""
+        return
+
+    def method2(self):
+        """public method 2"""
+        return
+
 
 def make_list(tree, vertex_list, father_index, depth, first=False, last=False):
+    """making a list of vertexes with recursive method"""
 
     if not isinstance(tree, list) or len(tree) != 2:
         raise ValueError("Invalid tree")
@@ -151,7 +160,7 @@ def make_list(tree, vertex_list, father_index, depth, first=False, last=False):
     if isinstance(tree[0], list):
         v.value = tree[1]
         sons_list = tree[0]
-    if isinstance(tree[1], list):
+    elif isinstance(tree[1], list):
         v.value = tree[0]
         sons_list = tree[1]
 
@@ -191,6 +200,7 @@ def make_list(tree, vertex_list, father_index, depth, first=False, last=False):
 
 
 def print_tree(vertex_list, indent, separator):
+    """printing tree"""
     finish_string = ""
     for i in range(len(vertex_list)):
 
@@ -293,6 +303,7 @@ def print_tree(vertex_list, indent, separator):
 
 # zachovejte interface metody
 def render_tree(tree: list = None, indent: int = 2, separator: str = ' ') -> str:
+    """main"""
     vertex_list = []
 
     make_list(tree, vertex_list, None, depth=0)
