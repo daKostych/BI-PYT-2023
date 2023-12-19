@@ -5,7 +5,7 @@ from game_variables import *
 # paddle class
 class Paddle:
     def __init__(self):
-        self.width = 125
+        self.width = 124
         self.height = 15
         self.x = int((screen_width / 2) - self.width // 2)
         self.y = screen_height - self.height - 8
