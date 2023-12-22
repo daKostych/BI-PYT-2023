@@ -12,11 +12,11 @@ class Paddle:
         # self.speed = 10
         self.rect = Rect(self.x, self.y, self.width, self.height)
 
-    def move(self):
-        mouse_x, mouse_y = pygame.mouse.get_pos()
+    def move(self, mouse_x):
+        # mouse_x, mouse_y = pygame.mouse.get_pos()
         if (mouse_x > self.width // 2) and (mouse_x < screen_width - self.width // 2):
             self.x = mouse_x - self.width // 2
 
-    def draw(self):
+    def draw(self, screen):
         self.rect = Rect(self.x, self.y, self.width, self.height)
         pygame.draw.rect(screen, paddle_col, self.rect)

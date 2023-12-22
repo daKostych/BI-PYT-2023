@@ -1,5 +1,4 @@
 from pygame.locals import *
-
 from game_variables import *
 
 
@@ -14,7 +13,7 @@ class Ball:
         self.speed_y = -6
         self.game_over = 0
 
-    def move(self, paddle, wall):
+    def move(self, paddle, wall, turn):
         wall_destroyed = 1
         collision_threshold = 8
         # collision with blocks
@@ -69,11 +68,12 @@ class Ball:
                 self.speed_y *= -1
             else:
                 self.speed_x *= -1
+            turn[0] += 1
 
         self.rect.x += self.speed_x
         self.rect.y += self.speed_y
 
         return self.game_over
 
-    def draw(self):
+    def draw(self, screen):
         pygame.draw.circle(screen, ball_col, (self.rect.x + self.ball_rad, self.rect.y + self.ball_rad), self.ball_rad)

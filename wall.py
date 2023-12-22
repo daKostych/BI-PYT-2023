@@ -19,6 +19,6 @@ class Wall:
                 block_individual = [rect, strength]
                 self.blocks.append(block_individual)
 
-    def draw_wall(self):
+    def draw_wall(self, screen):
         for block in self.blocks:
             pygame.draw.rect(screen, block_colour[block[1]], block[0])
