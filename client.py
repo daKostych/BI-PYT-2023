@@ -2,6 +2,7 @@ from pygame.locals import *
 from game_variables import *
 from network import Network
 import pickle
+import sys
 
 pygame.init()
 screen = pygame.display.set_mode((screen_width, screen_height))
@@ -10,8 +11,8 @@ pygame.display.set_caption("Breakout")
 
 class Client:
 
-    def __init__(self):
-        self.net = Network()
+    def __init__(self, ip, port):
+        self.net = Network(ip, port)
         self.id = self.net.id
 
     def run(self):
@@ -98,7 +99,7 @@ def menu():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 run = False
 
-    client = Client()
+    client = Client(sys.argv[1], int(sys.argv[2]))
     client.run()
 
 

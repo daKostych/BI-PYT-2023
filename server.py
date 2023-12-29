@@ -3,11 +3,14 @@ from _thread import *
 from game import Game
 import pickle
 import time
+import sys
+
+MAX_CONNECTIONS = 2
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-server = "192.168.0.171"
-port = 5550
+server = sys.argv[1]
+port = int(sys.argv[2])
 
 try:
     s.bind((server, port))
@@ -54,18 +57,25 @@ def handle_client(conn, playerID):
             print(f'Error')
             break
 
-    print(f'Connection closed')
+    print(f'Player {playerID + 1}: Connection closed')
     game.ready[playerID] = False
+    connections.remove(conn)
     conn.close()
 
 
 playerID = 0
+connections = []
 game = Game()
 game.wall.create_wall()
 
 while True:
     conn, addr = s.accept()
-    print(f'Connected to: {addr}')
-    start_new_thread(handle_client, (conn, playerID))
+
+    if len(connections) < MAX_CONNECTIONS:
+        connections.append(conn)
+        print(f'Connected to: {addr}')
+        start_new_thread(handle_client, (conn, playerID))
+    else:
+        print(f'Rejected, the maximum number of connections has been reached')
 
     playerID = (playerID + 1) % 2
