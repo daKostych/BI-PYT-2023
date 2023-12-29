@@ -20,4 +20,4 @@ background_image = pygame.transform.scale(background_image, (screen_width, scree
 cols = 15
 rows = 6
 clock = pygame.time.Clock()
-fps = 170
+fps = 60

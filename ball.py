@@ -9,8 +9,8 @@ class Ball:
         self.x = x - self.ball_rad
         self.y = y
         self.rect = Rect(self.x, self.y, self.ball_rad * 2, self.ball_rad * 2)
-        self.speed_x = 6
-        self.speed_y = -6
+        self.speed_x = 4
+        self.speed_y = -4
         self.game_over = 0
 
     def move(self, paddle, wall, turn):
