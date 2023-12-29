@@ -26,7 +26,7 @@ class Client:
 
             if game.game_over == 0:
                 if game.ready[0] and game.ready[1]:
-                    game.illustrate_game(screen)
+                    game.illustrate_game(screen, int(self.id))
                 else:
                     screen.fill((0, 0, 0))
                     font = pygame.font.SysFont("comicsans", 60)

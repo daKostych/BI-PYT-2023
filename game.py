@@ -18,11 +18,17 @@ class Game:
         self.paddle.move(mouse_pos[0])
         self.game_over = self.ball.move(self.paddle, self.wall, self.turn)
 
-    def illustrate_game(self, screen):
+    def illustrate_game(self, screen, player):
         screen.blit(background_image, (0, 0))
         self.wall.draw_wall(screen)
         self.paddle.draw(screen)
         self.ball.draw(screen)
+        font = pygame.font.SysFont("comicsans", 25)
+        if self.turn[0] % 2 == player:
+            text = font.render("Your turn!", 1, (255, 255, 255))
+        else:
+            text = font.render("Mate's turn!", 1, (255, 255, 255))
+        screen.blit(text, (705, 500))
         pygame.display.update()
 
     def reset(self):
