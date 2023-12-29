@@ -65,6 +65,11 @@ def handle_client(conn, playerID):
     conn.close()
 
 
+def handle_third_client(conn):
+    conn.send(str.encode("Rejected"))
+    conn.close()
+
+
 playerID = 0
 connections = [None, None]
 game = Game()
@@ -85,3 +90,4 @@ while True:
         playerID = (playerID + 1) % 2
     else:
         print(f'Rejected, the maximum number of connections has been reached')
+        start_new_thread(handle_third_client, (conn, ))

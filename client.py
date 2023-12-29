@@ -116,7 +116,13 @@ def menu():
                 run = False
 
     client = Client(sys.argv[1], int(sys.argv[2]))
-    client.run()
+
+    if client.id == "Rejected":
+        print(f'Rejected, the maximum number of connections has been reached')
+        pygame.quit()
+        sys.exit()
+    else:
+        client.run()
 
 
 while True:
