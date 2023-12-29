@@ -40,6 +40,14 @@ class Client:
                         if event.type == pygame.MOUSEBUTTONDOWN:
                             flag1 = False
                             self.net.client.send(str.encode("Ready"))
+                        if event.type == pygame.QUIT or event.type == pygame.K_ESCAPE:
+                            game.ready[int(self.id)] = False
+                            pygame.quit()
+                            sys.exit()
+                        if pygame.key.get_pressed()[K_ESCAPE]:
+                            game.ready[int(self.id)] = False
+                            pygame.quit()
+                            sys.exit()
                     if flag1:
                         self.net.client.send(str.encode("Not Ready"))
                     game = pickle.loads(self.net.client.recv(2048*12))
@@ -50,14 +58,22 @@ class Client:
                         if event.type == pygame.MOUSEBUTTONDOWN:
                             flag2 = False
                             self.net.client.send(str.encode("Ready"))
+                        if event.type == pygame.QUIT or event.type == pygame.K_ESCAPE:
+                            game.ready[int(self.id)] = False
+                            pygame.quit()
+                            sys.exit()
+                        if pygame.key.get_pressed()[K_ESCAPE]:
+                            game.ready[int(self.id)] = False
+                            pygame.quit()
+                            sys.exit()
                     if flag2:
                         self.net.client.send(str.encode("Not Ready"))
                     game = pickle.loads(self.net.client.recv(2048*12))
 
             if self.quit_check():
-                run = False
                 game.ready[int(self.id)] = False
                 pygame.quit()
+                sys.exit()
 
             flag1, flag2 = True, True
 
@@ -95,7 +111,7 @@ def menu():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
-                run = False
+                sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 run = False
 

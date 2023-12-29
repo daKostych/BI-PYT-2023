@@ -59,23 +59,29 @@ def handle_client(conn, playerID):
 
     print(f'Player {playerID + 1}: Connection closed')
     game.ready[playerID] = False
-    connections.remove(conn)
+    connections[playerID] = None
+    if connections == [None, None]:
+        game.reset()
     conn.close()
 
 
 playerID = 0
-connections = []
+connections = [None, None]
 game = Game()
 game.wall.create_wall()
 
 while True:
     conn, addr = s.accept()
 
-    if len(connections) < MAX_CONNECTIONS:
-        connections.append(conn)
+    if connections[playerID] is None:
+        connections[playerID] = conn
         print(f'Connected to: {addr}')
         start_new_thread(handle_client, (conn, playerID))
+        playerID = (playerID + 1) % 2
+    elif connections[(playerID + 1) % 2] is None:
+        connections[(playerID + 1) % 2] = conn
+        print(f'Connected to: {addr}')
+        start_new_thread(handle_client, (conn, (playerID + 1) % 2))
+        playerID = (playerID + 1) % 2
     else:
         print(f'Rejected, the maximum number of connections has been reached')
-
-    playerID = (playerID + 1) % 2
