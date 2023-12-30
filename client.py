@@ -121,12 +121,12 @@ class Client:
 
     def win(self, flag, game):
         """
-         Display the win message and handle player input.
+        Display the win message and handle player input.
 
-         Args:
-             flag (bool): Flag indicating whether to continue the loop.
-             game (Game): The current Game object.
-         """
+        Args:
+            flag (bool): Flag indicating whether to continue the loop.
+            game (Game): The current Game object.
+        """
         while flag:
             draw_message("You won!", "Click to restart!")
             for event in pygame.event.get():
