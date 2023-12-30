@@ -1,3 +1,7 @@
+"""
+Module for defining game variables and colors in a Breakout game.
+"""
+
 import pygame
 
 screen_width = 1500
