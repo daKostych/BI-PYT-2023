@@ -189,6 +189,9 @@ def menu():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
+            if pygame.key.get_pressed()[pygame.locals.K_ESCAPE]:
+                pygame.quit()
+                sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 run = False
 
