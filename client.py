@@ -14,7 +14,7 @@ import sys
 import pickle
 import pygame
 import pygame.locals
-from game_variables import screen_width, screen_height, clock, fps
+from game.game_variables import screen_width, screen_height, clock, fps
 from network import Network
 
 # Initialize Pygame

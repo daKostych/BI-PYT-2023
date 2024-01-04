@@ -3,12 +3,12 @@ import pytest
 from unittest.mock import MagicMock, patch
 from pylint.lint import Run
 from pylint.reporters import CollectingReporter
-from wall import Wall
-from paddle import Paddle
-from ball import Ball
-from game import Game
+from game.wall import Wall
+from game.paddle import Paddle
+from game.ball import Ball
+from game.game import Game
 from network import Network
-from game_variables import *
+from game.game_variables import *
 
 
 @pytest.mark.parametrize("file_path", ["server.py", "client.py", "network.py", "game.py", "wall.py", "paddle.py",

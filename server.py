@@ -29,7 +29,7 @@ from _thread import start_new_thread
 import pickle
 import time
 import sys
-from game import Game
+from game.game import Game
 
 # Create a socket
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
