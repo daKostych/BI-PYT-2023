@@ -4,10 +4,10 @@ Tento projekt je realizací kooperativní verze hry The Breakout game pro dva hr
 
 # Obsah
 
-- [Instalace](@instalace)
-- [Požadavky](@požadavky)
-- [Použití](@použití)
-- [Testování](@testování)
+- [Instalace](#instalace)
+- [Požadavky](#požadavky)
+- [Použití](#použití)
+- [Testování](#testování)
 
 
 ## Instalace
