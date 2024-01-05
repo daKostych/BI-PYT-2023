@@ -40,7 +40,6 @@ pip3 install -r requirements.txt
 ## Použití
 
 1. Klonujte nebo stáhněte tento repozitář do místního počítače.
-2. Projekt se nachází ve větvi `semestral`.
 2. Přejděte do kořenového adresáře projektu `/src`.
 3. Zjistit IP adresu vašeho počítače, na kterém bude server spuštěn pomocí příkazu:
 ```bash
