@@ -6,10 +6,10 @@ Classes:
 """
 
 import pygame
-from wall import Wall
-from game_variables import background_image
-from paddle import Paddle
-from ball import Ball
+from .wall import Wall
+from .game_variables import background_image
+from .paddle import Paddle
+from .ball import Ball
 
 
 class Game:

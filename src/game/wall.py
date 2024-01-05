@@ -7,7 +7,7 @@ Classes:
 
 import random
 import pygame
-from game_variables import screen_width, cols, rows, block_colour
+from .game_variables import screen_width, cols, rows, block_colour
 
 
 class Wall:

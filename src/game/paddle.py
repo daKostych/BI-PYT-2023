@@ -7,7 +7,7 @@ Classes:
 
 import pygame
 from pygame.locals import Rect
-from game_variables import screen_width, screen_height, paddle_col
+from .game_variables import screen_width, screen_height, paddle_col
 
 
 class Paddle:

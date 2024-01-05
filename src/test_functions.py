@@ -11,8 +11,9 @@ from network import Network
 from game.game_variables import *
 
 
-@pytest.mark.parametrize("file_path", ["server.py", "client.py", "network.py", "game.py", "wall.py", "paddle.py",
-                                       "ball.py", "game_variables"])
+@pytest.mark.parametrize("file_path", ["server.py", "client.py", "network.py", "game/game.py",
+                                       "game/wall.py", "game/paddle.py",
+                                       "game/ball.py", "game/game_variables.py"])
 def test_codestyle_score(file_path):
     """ Test codestyle score for each file. """
     file_path = os.path.abspath(file_path)

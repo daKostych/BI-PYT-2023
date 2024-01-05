@@ -17,7 +17,7 @@ block_beige = (218, 198, 122)
 # block colours list
 block_colour = [block_beige, block_orange, block_purple]
 
-background_image = pygame.image.load("venv/images/bg.png")
+background_image = pygame.image.load(".images/bg.png")
 background_image = pygame.transform.scale(background_image, (screen_width, screen_height))
 
 # game variables

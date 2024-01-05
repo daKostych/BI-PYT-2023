@@ -41,22 +41,27 @@ pip3 install ...
 ## Použití
 
 1. Klonujte nebo stáhněte tento repozitář do místního počítače.
-2. Zjistit IP adresu vašeho počítače, na kterém bude server spuštěn pomocí příkazu:
+2. Přejděte do kořenového adresáře projektu pomocí příkazu v terminálu:
+```bash
+cd src
+```
+3. Zjistit IP adresu vašeho počítače, na kterém bude server spuštěn pomocí příkazu:
 ```bash
 ifconfig
 ```
-3. Vyberte port, na kterém bude server fungovat. Například z intervalu [5550 - 5559]. V případě chyby `[Errno 98] Address already in use` vyberte jiný port.
-4. Spusťte server pomocí následujícího příkazu v terminálu:
+4. Vyberte port, na kterém bude server fungovat. Například z intervalu [5550 - 5559]. V případě chyby `[Errno 98] Address already in use` vyberte jiný port.
+5. Spusťte server pomocí následujícího příkazu v terminálu:
 ```bash
 python3 server.py IP port
 ```
 kde `IP` a `port` je vámi vybraná IP adresa a port (CLI parametry)
-5. Na libovolných dvou počítačích, které jsou připojeny ke **stejné** lokální síti jako server, spusťte v terminálu samotnou hru pomocí následujícího příkazu v terminálu:
-```bash
+6. Na libovolných dvou počítačích, které jsou připojeny ke **stejné** lokální síti jako server, spusťte v terminálu samotnou hru pomocí následujícího příkazu v terminálu:
+```
+bash
 python3 client.py IP port
 ```
 kde `IP` a `port` je IP adresa a port na kterém server běží (stejné jako v předchozím odstavci).
-6. Hra
+7. Hra
    - Postupujte podle pokynů v okně hry, které se otevře.
    - Ovládání herní platformy probíhá pomocí počítačové myši.
    - Ovládání se přepíná mezi dvěma hráči po každém zasažení míče o herní platformu.
