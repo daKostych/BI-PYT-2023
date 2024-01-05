@@ -51,11 +51,13 @@ ifconfig
 python3 server.py IP port
 ```
 kde `IP` a `port` je vámi vybraná IP adresa a port (CLI parametry)
+
 6. Na libovolných dvou počítačích, které jsou připojeny ke **stejné** lokální síti jako server, spusťte v terminálu samotnou hru pomocí následujícího příkazu v terminálu:
 ```bash
 python3 client.py IP port
 ```
 kde `IP` a `port` je IP adresa a port na kterém server běží (stejné jako v předchozím odstavci).
+
 7. Hra
    - Postupujte podle pokynů v okně hry, které se otevře.
    - Ovládání herní platformy probíhá pomocí počítačové myši.
