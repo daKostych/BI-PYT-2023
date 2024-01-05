@@ -28,23 +28,20 @@ Tento projekt vyžaduje instalaci následujících knihoven:
 
 - pygame
 - pickle
-- socket
 - pylint
 - pytest
 
 Použijte správce balíčků [pip](https://pip.pypa.io/en/stable/) pro instalaci potřebných knihoven.
 ```bash
-pip3 install ...
+pip3 install -r requirements.txt
 ```
 
 
 ## Použití
 
-1. Klonujte nebo stáhněte tento repozitář do místního počítače.
-2. Přejděte do kořenového adresáře projektu pomocí příkazu v terminálu:
-```bash
-cd src
-```
+1. Klonujte nebo stáhněte tento repozitář do místního počítače pomocí příkazu v terminálu.
+2. Projekt se nachází ve větvi `semestral`.
+2. Přejděte do kořenového adresáře projektu `/src`.
 3. Zjistit IP adresu vašeho počítače, na kterém bude server spuštěn pomocí příkazu:
 ```bash
 ifconfig
@@ -56,8 +53,7 @@ python3 server.py IP port
 ```
 kde `IP` a `port` je vámi vybraná IP adresa a port (CLI parametry)
 6. Na libovolných dvou počítačích, které jsou připojeny ke **stejné** lokální síti jako server, spusťte v terminálu samotnou hru pomocí následujícího příkazu v terminálu:
-```
-bash
+```bash
 python3 client.py IP port
 ```
 kde `IP` a `port` je IP adresa a port na kterém server běží (stejné jako v předchozím odstavci).
@@ -81,9 +77,8 @@ kde `IP` a `port` je IP adresa a port na kterém server běží (stejné jako v 
 
 ## Testování
 
-Spusťte testy provedením následujícího příkazu:
+Spusťte testy provedením následujícího příkazu v kořenovém adresáři `/src`:
 ```bash
-pytest test_functions.py
+pytest
 ```
-
 Tento příkaz spustí testy.

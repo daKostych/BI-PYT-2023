@@ -1,0 +1,4 @@
+pygame==2.5.2
+pickleshare==0.7.5
+pylint==3.0.1
+pytest==7.4.2
